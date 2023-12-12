@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         count = pref.getInt("COUNT",0);
         time = pref.getLong("TIME",0);
         if (time != 0){
-            chronometer.setBase(SystemClock.elapsedRealtime()+time);
+            chronometer.setBase(SystemClock.elapsedRealtime() + time);
         }
         if (date.equals("!")){
             refresh();
@@ -68,15 +68,15 @@ public class MainActivity extends AppCompatActivity {
             currentBtn.setTag(new Point(currentX, currentY));
         }
         loadData();
-        Chronometer chronometer = findViewById(R.id.chronometer);
+        chronometer = findViewById(R.id.chronometer);
         chronometer.setFormat("%s");
+        chronometer.setBase(SystemClock.elapsedRealtime());
         chronometer.start();
     }
     private void refresh(){
         ImageView image = findViewById(R.id.refresh);
         image.setClickable(false);
         count=0;
-        chronometer.setBase(SystemClock.elapsedRealtime());
         values.clear();
         initViews();
         initData();
@@ -90,7 +90,8 @@ public class MainActivity extends AppCompatActivity {
         while (!isSolvable()){
             refresh();
         }
-        Chronometer chronometer = findViewById(R.id.chronometer);
+        chronometer = findViewById(R.id.chronometer);
+        chronometer.setBase(SystemClock.elapsedRealtime());
         chronometer.start();
     }
     private void shuffle(){
@@ -121,25 +122,31 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
+        Log.d("TTT","Pause");
         pref.edit().putLong("TIME",SystemClock.elapsedRealtime()- chronometer.getBase()).apply();
         chronometer.stop();
     }
     @Override
     protected void onResume() {
         super.onResume();
-        chronometer.setBase(SystemClock.elapsedRealtime() + time);
+        time = pref.getLong("TIME",0);
+        if (time != 0){
+            chronometer.setBase(SystemClock.elapsedRealtime() - time);
+        }
         chronometer.start();
     }
     @Override
     protected void onStop() {
-        Log.d("TTT","stop");
+
+        Log.d("TTT","Stop");
+        Log.d("TTT",String.valueOf(chronometer.getBase()));
+        Log.d("TTT",String.valueOf(SystemClock.elapsedRealtime()));
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < buttons.length; i++) {
             for (int j = 0; j < buttons.length; j++) {
                 sb.append(buttons[i][j].getText()).append("#");
             }
         }
-
         sb.deleteCharAt(sb.length()-1);
         pref.edit().putString("STATE", sb.toString()).apply();
         pref.edit().putInt("COUNT", count).apply();

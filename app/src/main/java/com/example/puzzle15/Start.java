@@ -21,7 +21,8 @@ public class Start extends AppCompatActivity {
             startActivity(intent);
         });
         findViewById(R.id.links).setOnClickListener(v-> {
-
+            Intent intent = new Intent(Start.this, Links.class);
+            startActivity(intent);
         });
         findViewById(R.id.exit).setOnClickListener(v-> {
             finish();

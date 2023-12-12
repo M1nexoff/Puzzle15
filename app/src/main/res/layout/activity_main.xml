@@ -67,7 +67,7 @@
                 android:background="@drawable/circle_view_replaced"
                 android:layout_gravity="center"
                 android:clipToOutline="true"
-                android:src="@drawable/start_cub"
+                android:src="@drawable/cub"
                 />
             <RelativeLayout
                 android:id="@+id/relative"

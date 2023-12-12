@@ -15,11 +15,20 @@ public class Links extends AppCompatActivity {
         findViewById(R.id.telegram).setOnClickListener(v->{
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/M1nexofficial")));
         });
-        findViewById(R.id.telegram).setOnClickListener(v->{
+        findViewById(R.id.gita).setOnClickListener(v->{
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/gitauz")));
         });
-        findViewById(R.id.telegram).setOnClickListener(v->{
-            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/M1nexofficial")));
+        findViewById(R.id.github).setOnClickListener(v->{
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/M1nexoff/Puzzle15")));
         });
+        findViewById(R.id.menu).setOnClickListener(v->{
+            finish();
+        });
+        findViewById(R.id.game).setOnClickListener(v->{
+            Intent intent = new Intent(Links.this,MainActivity.class);
+            startActivity(intent);
+            finish();
+        });
+
     }
 }

@@ -13,6 +13,7 @@ import android.widget.TextView;
 public class WinActivity extends AppCompatActivity {
     private SharedPreferences pref;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +50,9 @@ public class WinActivity extends AppCompatActivity {
         findViewById(R.id.refresh).setOnClickListener(v-> {
             Intent intent = new Intent(WinActivity.this, MainActivity.class);
             startActivity(intent);
+            finish();
+        });
+        findViewById(R.id.back).setOnClickListener(v-> {
             finish();
         });
     }
