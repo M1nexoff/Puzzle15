@@ -1,0 +1,89 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".WinActivity"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="15"
+        android:src="@drawable/win"
+        android:layout_gravity="center"
+        android:scaleType="centerInside" />
+
+    <TextView
+        android:id="@+id/winMessageTextView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:text="Congratulations!\nYou Win!"
+        android:textSize="30sp"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:padding="16dp" />
+
+    <LinearLayout
+        android:id="@+id/infoLayout"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/moves"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Moves:"
+            android:textSize="25dp"
+            android:gravity="center"
+            android:textColor="#000000" />
+
+        <Chronometer
+            android:id="@+id/timer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:format="Time - %s"
+            android:text="Time:"
+            android:textSize="25dp"
+            android:gravity="center"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/top1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Best moves:"
+            android:textSize="25dp"
+            android:gravity="center"
+            android:textColor="#000000" />
+        <Chronometer
+            android:id="@+id/top2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:format="Best time - %s"
+            android:textSize="25dp"
+            android:gravity="center"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/rankImageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerCrop" />
+    <ImageView
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:id="@+id/refresh"
+        android:clickable="true"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/refresh_black" />
+</LinearLayout>
