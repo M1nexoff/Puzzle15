@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fon"
+    android:gravity="center"
+    android:orientation="horizontal"
+    tools:context=".Links">
+
+    <LinearLayout
+        android:layout_weight="1.2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center|top"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginVertical="100dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="60dp"
+            android:background="@drawable/free_button">
+
+            <TextView
+                android:id="@+id/moves"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Best moves:"
+                android:textSize="30dp"
+                android:gravity="center"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginVertical="100dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="60dp"
+            android:background="@drawable/free_button">
+            <Chronometer
+                android:id="@+id/timer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:format="Best time - %s"
+                android:textSize="30dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="bottom|center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/menu"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="150dp"
+            android:layout_weight="1"
+            android:background="@drawable/free_button"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Menu"
+                android:textColor="@color/white"
+                android:textSize="28sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/game"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="150dp"
+            android:layout_weight="1"
+            android:background="@drawable/free_button"
+            android:gravity="center">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Game"
+                android:textColor="@color/white"
+                android:textSize="28sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>
+

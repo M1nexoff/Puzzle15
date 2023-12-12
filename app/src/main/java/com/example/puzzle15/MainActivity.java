@@ -17,10 +17,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     private static final int N = 4;
@@ -36,7 +33,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        findViewById(R.id.refresh).setOnClickListener(v->refresh());
+        ImageView ref = findViewById(R.id.refresh);
+        ref.setOnClickListener(v->refresh());
+        ImageView back = findViewById(R.id.back);
+        back.setOnClickListener(v->finish());
         chronometer = findViewById(R.id.chronometer);
         pref = this.getSharedPreferences("STATE", Context.MODE_PRIVATE);
         String date = pref.getString("STATE","!");
@@ -122,7 +122,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d("TTT","Pause");
         pref.edit().putLong("TIME",SystemClock.elapsedRealtime()- chronometer.getBase()).apply();
         chronometer.stop();
     }
@@ -137,10 +136,6 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     protected void onStop() {
-
-        Log.d("TTT","Stop");
-        Log.d("TTT",String.valueOf(chronometer.getBase()));
-        Log.d("TTT",String.valueOf(SystemClock.elapsedRealtime()));
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < buttons.length; i++) {
             for (int j = 0; j < buttons.length; j++) {

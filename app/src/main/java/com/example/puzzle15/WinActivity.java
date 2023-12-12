@@ -7,21 +7,31 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.util.Log;
 import android.widget.Chronometer;
 import android.widget.TextView;
 
 public class WinActivity extends AppCompatActivity {
     private SharedPreferences pref;
+    private Chronometer timer;
+    private long elapsed;
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (getIntent().getBooleanExtra("ENABLED", false)){
+            Intent intent = new Intent(WinActivity.this, Info.class);
+            intent.putExtra("TOP1",pref.getInt("TOP1",0));
+            intent.putExtra("TOP2",pref.getLong("TOP2",SystemClock.elapsedRealtime()));
+            startActivity(intent);
+            finish();
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.win_activity);
         pref = getSharedPreferences("STATE", MODE_PRIVATE);
 
         TextView movesView = findViewById(R.id.moves);
-        Chronometer timer = findViewById(R.id.timer);
+        timer = findViewById(R.id.timer);
 
         int moves = getIntent().getIntExtra("MOVES", 0);
         long time = getIntent().getLongExtra("TIME", 0);
@@ -30,7 +40,11 @@ public class WinActivity extends AppCompatActivity {
         int seconds = (elapsedMillis / 1000) % 60;
         movesView.setText("Moves: " + moves);
         timer.setBase(SystemClock.elapsedRealtime() - elapsedMillis);
-        timer.setFormat("Time taken - %s");
+        time = pref.getLong("TIME",0);
+        if (time != 0){
+            timer.setBase(SystemClock.elapsedRealtime() + time);
+        }
+        timer.setFormat("Time - %s");
 
         int top1 = pref.getInt("TOP1", 0);
         long top2 = pref.getLong("TOP2", 0);
@@ -55,5 +69,24 @@ public class WinActivity extends AppCompatActivity {
         findViewById(R.id.back).setOnClickListener(v-> {
             finish();
         });
+    }
+
+    @Override
+    protected void onStop() {
+        pref.edit().putLong("TIME",SystemClock.elapsedRealtime() - timer.getBase()).apply();
+        elapsed = SystemClock.elapsedRealtime() - timer.getBase();
+        super.onStop();
+    }
+
+    @Override
+
+
+
+    protected void onResume() {
+        super.onResume();
+        elapsed = pref.getLong("TIME",0);
+        if (elapsed != 0){
+            timer.setBase(SystemClock.elapsedRealtime() - elapsed);
+        }
     }
 }

@@ -67,7 +67,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Moves:"
-                    android:textSize="30dp"
+                    android:textSize="27dp"
                     android:gravity="center"
                     android:textColor="#000000" />
 
@@ -77,7 +77,7 @@
                     android:layout_height="wrap_content"
                     android:format="Time - %s"
                     android:text="Time:"
-                    android:textSize="30dp"
+                    android:textSize="27dp"
                     android:gravity="center"
                     android:textColor="#000000" />
 
@@ -86,7 +86,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Best moves:"
-                    android:textSize="30dp"
+                    android:textSize="27dp"
                     android:gravity="center"
                     android:textColor="#000000" />
                 <Chronometer
@@ -94,7 +94,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:format="Best time - %s"
-                    android:textSize="30dp"
+                    android:textSize="27dp"
                     android:gravity="center"
                     android:textColor="#000000" />
                 <ImageView
@@ -148,7 +148,7 @@
     <!--                    android:padding="16dp"-->
     <!--                    android:text="Congratulations!\nYou Win!"-->
     <!--                    android:textColor="#000000"-->
-    <!--                    android:textSize="25dp" />-->
+    <!--                    android:textSize="27dp" />-->
 
     <!--            </LinearLayout>-->
 
@@ -167,7 +167,7 @@
     <!--                    android:gravity="center"-->
     <!--                    android:text="Moves:"-->
     <!--                    android:textColor="#000000"-->
-    <!--                    android:textSize="25dp" />-->
+    <!--                    android:textSize="27dp" />-->
 
     <!--                <Chronometer-->
     <!--                    android:id="@+id/timer"-->
@@ -177,7 +177,7 @@
     <!--                    android:gravity="center"-->
     <!--                    android:text="Time:"-->
     <!--                    android:textColor="#000000"-->
-    <!--                    android:textSize="25dp" />-->
+    <!--                    android:textSize="27dp" />-->
 
     <!--                <TextView-->
     <!--                    android:id="@+id/top1"-->
@@ -186,7 +186,7 @@
     <!--                    android:gravity="center"-->
     <!--                    android:text="Best moves:"-->
     <!--                    android:textColor="#000000"-->
-    <!--                    android:textSize="25dp" />-->
+    <!--                    android:textSize="27dp" />-->
 
     <!--                <Chronometer-->
     <!--                    android:id="@+id/top2"-->
@@ -195,7 +195,7 @@
     <!--                    android:format="Best time - %s"-->
     <!--                    android:gravity="center"-->
     <!--                    android:textColor="#000000"-->
-    <!--                    android:textSize="25dp" />-->
+    <!--                    android:textSize="27dp" />-->
 
     <!--            </LinearLayout>-->
 

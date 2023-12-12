@@ -199,16 +199,30 @@
                     />
             </RelativeLayout>
         </FrameLayout>
-        <ImageView
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_gravity="center"
-            android:id="@+id/refresh"
-            android:clickable="true"
-            android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginBottom="50dp"
-            android:layout_below="@id/btn14"
-            android:layout_toEndOf="@id/btn13"
-            android:src="@drawable/refresh" />
+            android:orientation="horizontal"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:clickable="true"
+                android:layout_gravity="center"
+                android:src="@drawable/back_r" />
+            <View
+                android:layout_width="100dp"
+                android:layout_height="100dp"/>
+            <ImageView
+                android:id="@+id/refresh"
+                android:layout_width="100dp"
+                android:layout_gravity="center"
+                android:layout_height="100dp"
+                android:clickable="true"
+                android:src="@drawable/refresh" />
+        </LinearLayout>
     </LinearLayout>
 
 </FrameLayout>

@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:orientation="horizontal">
         <LinearLayout
-            android:layout_width="250dp"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical">
@@ -34,7 +34,7 @@
                     android:layout_weight="1"
                     android:text="Count: "
                     android:textColor="@color/white"
-                    android:textSize="30dp" />
+                    android:textSize="25dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -64,16 +64,16 @@
             android:gravity="center">
             <FrameLayout
                 android:layout_marginStart="10dp"
-                android:layout_width="350dp"
-                android:layout_height="350dp"
+                android:layout_width="330dp"
+                android:layout_height="330dp"
                 android:layout_gravity="center|left">
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/circle_view_replaced" />
                 <ImageView
-                    android:layout_width="330dp"
-                    android:layout_height="330dp"
+                    android:layout_width="310dp"
+                    android:layout_height="310dp"
                     android:clipToOutline="true"
                     android:layout_gravity="center"
                     android:src="@drawable/cub" />
@@ -192,15 +192,31 @@
                         android:layout_toEndOf="@id/btn15" />
                 </RelativeLayout>
             </FrameLayout>
-
-            <ImageView
-                android:id="@+id/refresh"
+            <LinearLayout
                 android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:clickable="true"
                 android:layout_gravity="center|right"
-                android:layout_marginEnd="20dp"
-                android:src="@drawable/refresh" />
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/refresh"
+                    android:layout_width="100dp"
+                    android:layout_gravity="center"
+                    android:layout_height="100dp"
+                    android:clickable="true"
+                    android:src="@drawable/refresh" />
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"/>
+                <ImageView
+                    android:id="@+id/back"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:clickable="true"
+                    android:layout_gravity="center"
+                    android:src="@drawable/back_r" />
+            </LinearLayout>
+
         </FrameLayout>
     </LinearLayout>
 </FrameLayout>

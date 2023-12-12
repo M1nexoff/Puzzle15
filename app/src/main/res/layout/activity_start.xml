@@ -15,7 +15,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.5"/>
+            android:layout_weight="0.2"/>
         <TextView
             android:id="@+id/app_name"
             android:layout_width="match_parent"
@@ -26,10 +26,6 @@
             android:textSize="60dp"
             android:textStyle="bold"
             android:layout_marginTop="20dp" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.5"/>
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/play"
             android:layout_marginHorizontal="50dp"
@@ -67,6 +63,6 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"/>
+            android:layout_weight="0.5"/>
     </LinearLayout>
 </FrameLayout>

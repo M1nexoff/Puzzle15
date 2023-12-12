@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fon"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".Links">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/moves"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginVertical="5dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="60dp"
+            android:background="@drawable/free_button">
+
+            <TextView
+                android:layout_gravity="center"
+                android:id="@+id/top1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Best moves:"
+                android:textSize="30dp"
+                android:gravity="center"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/time"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginVertical="5dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="60dp"
+            android:background="@drawable/free_button">
+
+            <Chronometer
+                android:id="@+id/top2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:format="Best time - %s"
+                android:textSize="30dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="bottom">
+
+        <LinearLayout
+            android:id="@+id/menu"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/free_button"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Menu"
+                android:textColor="@color/white"
+                android:textSize="28sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/game"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/free_button"
+            android:gravity="center">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Game"
+                android:textColor="@color/white"
+                android:textSize="28sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</FrameLayout>

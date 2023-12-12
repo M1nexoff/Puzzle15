@@ -17,7 +17,8 @@ public class Start extends AppCompatActivity {
             startActivity(intent);
         });
         findViewById(R.id.info).setOnClickListener(v-> {
-            Intent intent = new Intent(Start.this, MainActivity.class);
+            Intent intent = new Intent(Start.this, WinActivity.class);
+            intent.putExtra("ENABLED", true);
             startActivity(intent);
         });
         findViewById(R.id.links).setOnClickListener(v-> {
