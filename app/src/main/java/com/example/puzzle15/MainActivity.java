@@ -70,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
         loadData();
         chronometer = findViewById(R.id.chronometer);
         chronometer.setFormat("%s");
-        chronometer.setBase(SystemClock.elapsedRealtime());
         chronometer.start();
     }
     private void refresh(){
@@ -92,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
         }
         chronometer = findViewById(R.id.chronometer);
         chronometer.setBase(SystemClock.elapsedRealtime());
+        time = 0;
         chronometer.start();
     }
     private void shuffle(){
@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         time = pref.getLong("TIME",0);
         if (time != 0){
-            chronometer.setBase(SystemClock.elapsedRealtime() - time);
+            chronometer.setBase(SystemClock.elapsedRealtime() + time);
         }
         chronometer.start();
     }
@@ -196,15 +196,13 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         chronometer.stop();
-        time = chronometer.getBase();
-        chronometer.setBase(SystemClock.elapsedRealtime());
+        time = SystemClock.elapsedRealtime() - chronometer.getBase();
         Intent intent = new Intent(MainActivity.this, WinActivity.class);
         intent.putExtra("MOVES",count);
         intent.putExtra("TIME",time);
         intent.putExtra("TOP1",0);
         intent.putExtra("TOP2",0);
         startActivity(intent);
-        count=0;
         finish();
     }
     private int getInvCount(int[] arr) {

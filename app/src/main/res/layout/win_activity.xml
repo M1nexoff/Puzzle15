@@ -87,7 +87,7 @@
             android:clickable="true"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/refresh_black" />
+            android:src="@drawable/refresh" />
     </LinearLayout>
 
 </LinearLayout>

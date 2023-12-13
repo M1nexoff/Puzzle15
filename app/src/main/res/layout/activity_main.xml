@@ -211,7 +211,7 @@
                 android:layout_height="100dp"
                 android:clickable="true"
                 android:layout_gravity="center"
-                android:src="@drawable/back_r" />
+                android:src="@drawable/back" />
             <View
                 android:layout_width="100dp"
                 android:layout_height="100dp"/>
