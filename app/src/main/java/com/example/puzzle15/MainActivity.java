@@ -21,6 +21,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private static final int N = 4;
+    private boolean isWin;
     private Button[][] buttons = new Button[4][4];
     private List<String> values = new ArrayList<>();
     private int x = 3;
@@ -42,9 +43,6 @@ public class MainActivity extends AppCompatActivity {
         String date = pref.getString("STATE","!");
         count = pref.getInt("COUNT",0);
         time = pref.getLong("TIME",0);
-        if (time != 0){
-            chronometer.setBase(SystemClock.elapsedRealtime() + time);
-        }
         if (date.equals("!")){
             refresh();
             return;
@@ -69,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         }
         loadData();
         chronometer = findViewById(R.id.chronometer);
+        chronometer.setBase(SystemClock.elapsedRealtime() + time);
         chronometer.setFormat("%s");
         chronometer.start();
     }
@@ -121,21 +120,22 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onPause() {
-        super.onPause();
-        pref.edit().putLong("TIME",SystemClock.elapsedRealtime()- chronometer.getBase()).apply();
+        time = SystemClock.elapsedRealtime() - chronometer.getBase();
+        pref.edit().putLong("TIME", time).apply();
         chronometer.stop();
+        super.onPause();
     }
     @Override
     protected void onResume() {
         super.onResume();
+        Log.d("TTT", "onResume");
         time = pref.getLong("TIME",0);
-        if (time != 0){
-            chronometer.setBase(SystemClock.elapsedRealtime() + time);
-        }
+        chronometer.setBase(SystemClock.elapsedRealtime() - time);
         chronometer.start();
     }
     @Override
     protected void onStop() {
+        Log.d("TTT", "onStop");
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < buttons.length; i++) {
             for (int j = 0; j < buttons.length; j++) {
@@ -145,9 +145,12 @@ public class MainActivity extends AppCompatActivity {
         sb.deleteCharAt(sb.length()-1);
         pref.edit().putString("STATE", sb.toString()).apply();
         pref.edit().putInt("COUNT", count).apply();
-        pref.edit().putLong("TIME",SystemClock.elapsedRealtime()- chronometer.getBase()).apply();
+        pref.edit().putLong("TIME",SystemClock.elapsedRealtime() - chronometer.getBase()).apply();
         time = SystemClock.elapsedRealtime() - chronometer.getBase();
         chronometer.stop();
+        if (isWin){
+            pref.edit().putLong("TIME",0).apply();
+        }
         super.onStop();
     }
 
@@ -200,9 +203,12 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, WinActivity.class);
         intent.putExtra("MOVES",count);
         intent.putExtra("TIME",time);
-        intent.putExtra("TOP1",0);
-        intent.putExtra("TOP2",0);
+        time = 0;
+        count = 0;
+        pref.edit().putLong("TIME",0).apply();
+        pref.edit().putInt("COUNT",0).apply();
         startActivity(intent);
+        isWin = true;
         finish();
     }
     private int getInvCount(int[] arr) {

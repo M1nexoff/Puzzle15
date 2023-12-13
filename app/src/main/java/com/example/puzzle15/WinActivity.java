@@ -25,7 +25,7 @@ public class WinActivity extends AppCompatActivity {
         if (getIntent().getBooleanExtra("ENABLED", false)){
             Intent intent = new Intent(WinActivity.this, Info.class);
             intent.putExtra("TOP1",pref.getInt("TOP1",0));
-            intent.putExtra("TOP2",pref.getLong("TOP2",SystemClock.elapsedRealtime()));
+            intent.putExtra("TOP2",pref.getLong("TOP2",0));
             startActivity(intent);
             finish();
         }
@@ -35,24 +35,19 @@ public class WinActivity extends AppCompatActivity {
 
         int moves = getIntent().getIntExtra("MOVES", 0);
         long time = getIntent().getLongExtra("TIME", 0);
-        int elapsedMillis = (int) (SystemClock.elapsedRealtime() - time);
-        int minutes = (elapsedMillis / 1000) / 60;
-        int seconds = (elapsedMillis / 1000) % 60;
+        long forTimer = (SystemClock.elapsedRealtime() - time);
         movesView.setText("Moves: " + moves);
-        timer.setBase(SystemClock.elapsedRealtime() - elapsedMillis);
+        timer.setBase(forTimer);
         time = pref.getLong("TIME",0);
-        if (time != 0){
-            timer.setBase(SystemClock.elapsedRealtime() + time);
-        }
         timer.setFormat("Time - %s");
-
+        timer.setBase(SystemClock.elapsedRealtime() - time);
         int top1 = pref.getInt("TOP1", 0);
         long top2 = pref.getLong("TOP2", SystemClock.elapsedRealtime());
         if (moves < top1 || top1 == 0) {
             top1 = moves;
         }
-        if (elapsedMillis < top2 || top2 == 0) {
-            top2 = elapsedMillis;
+        if (time < top2 || top2 == 0) {
+            top2 = time;
         }
         TextView top_1 = findViewById(R.id.top1);
         Chronometer top_2 = findViewById(R.id.top2);
@@ -71,22 +66,5 @@ public class WinActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onStop() {
-        pref.edit().putLong("TIME",SystemClock.elapsedRealtime() - timer.getBase()).apply();
-        elapsed = SystemClock.elapsedRealtime() - timer.getBase();
-        super.onStop();
-    }
 
-    @Override
-
-
-
-    protected void onResume() {
-        super.onResume();
-        elapsed = pref.getLong("TIME",0);
-        if (elapsed != 0){
-            timer.setBase(SystemClock.elapsedRealtime() - elapsed);
-        }
-    }
 }
