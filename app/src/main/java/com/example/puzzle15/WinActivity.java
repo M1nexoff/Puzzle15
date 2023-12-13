@@ -16,20 +16,11 @@ public class WinActivity extends AppCompatActivity {
     private Chronometer timer;
     private long elapsed;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.win_activity);
-        pref = getSharedPreferences("STATE", MODE_PRIVATE);
-        if (getIntent().getBooleanExtra("ENABLED", false)){
-            Intent intent = new Intent(WinActivity.this, Info.class);
-            intent.putExtra("TOP1",pref.getInt("TOP1",0));
-            intent.putExtra("TOP2",pref.getLong("TOP2",0));
-            startActivity(intent);
-            finish();
-        }
-
+        pref = getInstance("STATE",MODE_PRIVATE);
         TextView movesView = findViewById(R.id.moves);
         timer = findViewById(R.id.timer);
 
@@ -42,7 +33,7 @@ public class WinActivity extends AppCompatActivity {
         timer.setFormat("Time - %s");
         timer.setBase(SystemClock.elapsedRealtime() - time);
         int top1 = pref.getInt("TOP1", 0);
-        long top2 = pref.getLong("TOP2", SystemClock.elapsedRealtime());
+        long top2 = pref.getLong("TOP2", 0);
         if (moves < top1 || top1 == 0) {
             top1 = moves;
         }
@@ -54,8 +45,8 @@ public class WinActivity extends AppCompatActivity {
         pref.edit().putInt("TOP1", top1).apply();
         pref.edit().putLong("TOP2", top2).apply();
         top_1.setText("Best moves: " + top1);
-        top_2.setBase(SystemClock.elapsedRealtime() - top2);
         top_2.setFormat("Best time - %s");
+        top_2.setBase(SystemClock.elapsedRealtime() - top2);
         findViewById(R.id.refresh).setOnClickListener(v-> {
             Intent intent = new Intent(WinActivity.this, MainActivity.class);
             startActivity(intent);
@@ -65,6 +56,11 @@ public class WinActivity extends AppCompatActivity {
             finish();
         });
     }
-
+    private SharedPreferences getInstance(String name,int i) {
+        if(pref==null){
+            pref = this.getSharedPreferences(name,MODE_PRIVATE);
+        }
+        return pref;
+    }
 
 }

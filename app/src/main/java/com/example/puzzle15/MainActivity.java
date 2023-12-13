@@ -205,8 +205,8 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("TIME",time);
         time = 0;
         count = 0;
-        pref.edit().putLong("TIME",0).apply();
-        pref.edit().putInt("COUNT",0).apply();
+        pref.edit().putLong("TIME",time).apply();
+        pref.edit().putInt("COUNT",count).apply();
         startActivity(intent);
         isWin = true;
         finish();

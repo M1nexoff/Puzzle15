@@ -20,8 +20,7 @@ public class Start extends AppCompatActivity {
         });
 
         findViewById(R.id.info).setOnClickListener(v -> {
-            Intent intent = new Intent(Start.this, WinActivity.class);
-            intent.putExtra("ENABLED", true);
+            Intent intent = new Intent(Start.this, Info.class);
             startActivity(intent);
         });
 

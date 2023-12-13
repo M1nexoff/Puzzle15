@@ -2,10 +2,12 @@ package com.example.puzzle15;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.util.Log;
 import android.view.View;
 import android.widget.Chronometer;
 import android.widget.LinearLayout;
@@ -14,6 +16,7 @@ import android.widget.TextView;
 public class Info extends AppCompatActivity {
     SharedPreferences pref;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         pref = getSharedPreferences("STATE", MODE_PRIVATE);
@@ -21,7 +24,7 @@ public class Info extends AppCompatActivity {
         setContentView(R.layout.activity_info);
 
         TextView moves = findViewById(R.id.moves);
-        moves.setText("Moves: " + pref.getInt("TOP1", 0));
+        moves.setText("Moves: " + pref.getInt("TOP1",0));
 
         Chronometer time = findViewById(R.id.timer);
         long baseTime = SystemClock.elapsedRealtime() - pref.getLong("TOP2", 0);
