@@ -17,8 +17,8 @@
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginVertical="50dp"
-            android:layout_marginHorizontal="60dp"
+            android:layout_marginVertical="40dp"
+            android:layout_marginHorizontal="50dp"
             android:background="@drawable/free_button">
             <TextView
                 android:id="@+id/moves"
@@ -34,9 +34,9 @@
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginVertical="50dp"
+            android:layout_marginVertical="40dp"
             android:layout_gravity="center"
-            android:layout_marginHorizontal="60dp"
+            android:layout_marginHorizontal="50dp"
             android:background="@drawable/free_button">
             <Chronometer
                 android:id="@+id/timer"
