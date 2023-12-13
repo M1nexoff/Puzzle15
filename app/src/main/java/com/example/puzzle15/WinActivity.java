@@ -19,6 +19,9 @@ public class WinActivity extends AppCompatActivity {
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.win_activity);
+        pref = getSharedPreferences("STATE", MODE_PRIVATE);
         if (getIntent().getBooleanExtra("ENABLED", false)){
             Intent intent = new Intent(WinActivity.this, Info.class);
             intent.putExtra("TOP1",pref.getInt("TOP1",0));
@@ -26,9 +29,6 @@ public class WinActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.win_activity);
-        pref = getSharedPreferences("STATE", MODE_PRIVATE);
 
         TextView movesView = findViewById(R.id.moves);
         timer = findViewById(R.id.timer);
@@ -47,7 +47,7 @@ public class WinActivity extends AppCompatActivity {
         timer.setFormat("Time - %s");
 
         int top1 = pref.getInt("TOP1", 0);
-        long top2 = pref.getLong("TOP2", 0);
+        long top2 = pref.getLong("TOP2", SystemClock.elapsedRealtime());
         if (moves < top1 || top1 == 0) {
             top1 = moves;
         }

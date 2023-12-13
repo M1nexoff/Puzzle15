@@ -8,24 +8,29 @@ import android.os.Bundle;
 
 public class Start extends AppCompatActivity {
     private SharedPreferences pref;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
-        findViewById(R.id.play).setOnClickListener(v-> {
+
+        findViewById(R.id.play).setOnClickListener(v -> {
             Intent intent = new Intent(Start.this, MainActivity.class);
             startActivity(intent);
         });
-        findViewById(R.id.info).setOnClickListener(v-> {
+
+        findViewById(R.id.info).setOnClickListener(v -> {
             Intent intent = new Intent(Start.this, WinActivity.class);
             intent.putExtra("ENABLED", true);
             startActivity(intent);
         });
-        findViewById(R.id.links).setOnClickListener(v-> {
+
+        findViewById(R.id.links).setOnClickListener(v -> {
             Intent intent = new Intent(Start.this, Links.class);
             startActivity(intent);
         });
-        findViewById(R.id.exit).setOnClickListener(v-> {
+
+        findViewById(R.id.exit).setOnClickListener(v -> {
             finish();
         });
     }

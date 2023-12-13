@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/fon"
     android:gravity="center"
-    android:orientation="vertical"
     tools:context=".Links">
 
     <LinearLayout
@@ -16,7 +15,6 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/moves"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginVertical="5dp"
@@ -25,8 +23,8 @@
             android:background="@drawable/free_button">
 
             <TextView
+                android:id="@+id/moves"
                 android:layout_gravity="center"
-                android:id="@+id/top1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Best moves:"
@@ -36,7 +34,6 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/time"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginVertical="5dp"
@@ -45,7 +42,7 @@
             android:background="@drawable/free_button">
 
             <Chronometer
-                android:id="@+id/top2"
+                android:id="@+id/timer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:format="Best time - %s"
