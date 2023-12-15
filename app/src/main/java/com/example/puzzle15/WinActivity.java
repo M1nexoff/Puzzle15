@@ -26,18 +26,16 @@ public class WinActivity extends AppCompatActivity {
 
         int moves = getIntent().getIntExtra("MOVES", 0);
         long time = getIntent().getLongExtra("TIME", 0);
-        long forTimer = (SystemClock.elapsedRealtime() - time);
         movesView.setText("Moves: " + moves);
-        timer.setBase(forTimer);
         time = pref.getLong("TIME",0);
         timer.setFormat("Time - %s");
-        timer.setBase(SystemClock.elapsedRealtime() - time);
+        timer.setBase(SystemClock.elapsedRealtime() + time);
         int top1 = pref.getInt("TOP1", 0);
         long top2 = pref.getLong("TOP2", 0);
         if (moves < top1 || top1 == 0) {
             top1 = moves;
         }
-        if (time < top2 || top2 == 0) {
+        if (time > top2 || top2 == 0) {
             top2 = time;
         }
         TextView top_1 = findViewById(R.id.top1);
@@ -46,7 +44,7 @@ public class WinActivity extends AppCompatActivity {
         pref.edit().putLong("TOP2", top2).apply();
         top_1.setText("Best moves: " + top1);
         top_2.setFormat("Best time - %s");
-        top_2.setBase(SystemClock.elapsedRealtime() - top2);
+        top_2.setBase(SystemClock.elapsedRealtime() + top2);
         findViewById(R.id.refresh).setOnClickListener(v-> {
             Intent intent = new Intent(WinActivity.this, MainActivity.class);
             startActivity(intent);

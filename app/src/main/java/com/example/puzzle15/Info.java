@@ -10,6 +10,7 @@ import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
 import android.widget.Chronometer;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -27,12 +28,20 @@ public class Info extends AppCompatActivity {
         moves.setText("Moves: " + pref.getInt("TOP1",0));
 
         Chronometer time = findViewById(R.id.timer);
-        long baseTime = SystemClock.elapsedRealtime() - pref.getLong("TOP2", 0);
+        long baseTime = SystemClock.elapsedRealtime() + pref.getLong("TOP2", 0);
         time.setBase(baseTime);
         time.setFormat("Best time - %s");
 
         LinearLayout menu = findViewById(R.id.menu);
         menu.setOnClickListener(v -> finish());
+        ImageView refresh = findViewById(R.id.refresh);
+        refresh.setOnClickListener(v -> {
+            pref.edit().putInt("TOP1",0).apply();
+            pref.edit().putLong("TOP2",0).apply();
+            Intent intent = new Intent(Info.this,Info.class);
+            startActivity(intent);
+            finish();
+        });
 
         LinearLayout game = findViewById(R.id.game);
         game.setOnClickListener(v -> {

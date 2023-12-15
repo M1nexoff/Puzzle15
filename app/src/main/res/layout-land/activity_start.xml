@@ -43,7 +43,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:layout_marginVertical="25dp"
-                    android:background="@drawable/play"/>
+                    android:background="@drawable/play_start"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/info"

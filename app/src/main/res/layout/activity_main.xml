@@ -212,9 +212,32 @@
                 android:clickable="true"
                 android:layout_gravity="center"
                 android:src="@drawable/back" />
-            <View
+            <Space
+                android:layout_width="50dp"
+                android:layout_height="20dp"/>
+            <FrameLayout
                 android:layout_width="100dp"
-                android:layout_height="100dp"/>
+                android:layout_height="100dp"
+                android:layout_gravity="center">
+                <ImageView
+                    android:id="@+id/pause"
+                    android:layout_width="100dp"
+                    android:layout_gravity="center"
+                    android:layout_height="100dp"
+                    android:clickable="true"
+                    android:src="@drawable/pause" />
+                <ImageView
+                    android:visibility="invisible"
+                    android:id="@+id/resume"
+                    android:layout_width="100dp"
+                    android:layout_gravity="center"
+                    android:layout_height="100dp"
+                    android:clickable="true"
+                    android:src="@drawable/play" />
+            </FrameLayout>
+            <Space
+                android:layout_width="50dp"
+                android:layout_height="20dp"/>
             <ImageView
                 android:id="@+id/refresh"
                 android:layout_width="100dp"
@@ -224,5 +247,13 @@
                 android:src="@drawable/refresh" />
         </LinearLayout>
     </LinearLayout>
+    <View
+        android:id="@+id/pause_fon"
+        android:layout_width="330dp"
+        android:layout_height="330dp"
+        android:background="@drawable/paused"
+        android:layout_gravity="center"
+        android:visibility="invisible"
+        />
 
 </FrameLayout>

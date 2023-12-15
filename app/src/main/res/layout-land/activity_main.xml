@@ -192,6 +192,14 @@
                         android:layout_margin="10dp"
                         android:layout_toEndOf="@id/btn15" />
                 </RelativeLayout>
+
+                <View
+                    android:id="@+id/pause_fon"
+                    android:visibility="invisible"
+                    android:layout_gravity="center"
+                    android:layout_width="310dp"
+                    android:layout_height="310dp"
+                    android:background="@drawable/paused" />
             </FrameLayout>
             <LinearLayout
                 android:layout_width="100dp"
@@ -200,22 +208,46 @@
                 android:orientation="vertical"
                 android:gravity="center">
                 <ImageView
-                    android:id="@+id/refresh"
-                    android:layout_width="100dp"
-                    android:layout_gravity="center"
-                    android:layout_height="100dp"
-                    android:clickable="true"
-                    android:src="@drawable/refresh" />
-                <View
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"/>
-                <ImageView
                     android:id="@+id/back"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:clickable="true"
                     android:layout_gravity="center"
                     android:src="@drawable/back" />
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"/>
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center">
+                    <ImageView
+
+                        android:id="@+id/pause"
+                        android:layout_width="100dp"
+                        android:layout_gravity="center"
+                        android:layout_height="100dp"
+                        android:clickable="true"
+                        android:src="@drawable/pause" />
+                    <ImageView
+                        android:visibility="invisible"
+                        android:id="@+id/resume"
+                        android:layout_width="100dp"
+                        android:layout_gravity="center"
+                        android:layout_height="100dp"
+                        android:clickable="true"
+                        android:src="@drawable/play" />
+                </FrameLayout>
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"/>
+                <ImageView
+                    android:id="@+id/refresh"
+                    android:layout_width="100dp"
+                    android:layout_gravity="center"
+                    android:layout_height="100dp"
+                    android:clickable="true"
+                    android:src="@drawable/refresh" />
             </LinearLayout>
 
         </FrameLayout>
