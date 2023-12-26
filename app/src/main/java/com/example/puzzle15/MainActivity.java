@@ -71,9 +71,9 @@ public class MainActivity extends AppCompatActivity {
         chronometer = findViewById(R.id.chronometer);
         chronometer.setFormat("%s");
         chronometer.setBase(SystemClock.elapsedRealtime() + time);
-        if (!pref.getBoolean("PAUSE", false)){
+        if (!pref.getBoolean("PAUSE", false)) {
             resume();
-        }else{
+        } else {
             pause();
         }
         findViewById(R.id.pause).setOnClickListener(a -> pause());
@@ -111,8 +111,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void pause() {
-        pref.edit().putLong("TIME", chronometer.getBase() - SystemClock.elapsedRealtime()).apply();
         chronometer.stop();
+        pref.edit().putLong("TIME", chronometer.getBase() - SystemClock.elapsedRealtime()).apply();
         isPaused = true;
         pref.edit().putBoolean("PAUSE", true).apply();
         findViewById(R.id.pause_fon).setVisibility(View.VISIBLE);
@@ -170,7 +170,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (!pref.getBoolean("PAUSE",false)) {
+        if (!pref.getBoolean("PAUSE", false)) {
             time = pref.getLong("TIME", 0);
             chronometer.setBase(SystemClock.elapsedRealtime() + time);
             chronometer.start();
@@ -264,9 +264,7 @@ public class MainActivity extends AppCompatActivity {
         int inv_count = 0;
         for (int i = 0; i < N * N - 1; i++) {
             for (int j = i + 1; j < N * N; j++) {
-                if (arr[j] != 0 && arr[i] != 0
-                        && arr[i] > arr[j])
-                    inv_count++;
+                if (arr[j] != 0 && arr[i] != 0 && arr[i] > arr[j]) inv_count++;
             }
         }
         return inv_count;
@@ -277,17 +275,14 @@ public class MainActivity extends AppCompatActivity {
         arr = convertTo1DArray();
         int invCount = getInvCount(arr);
 
-        if (N % 2 == 1)
-            return invCount % 2 == 0;
+        if (N % 2 == 1) return invCount % 2 == 0;
         else {
             int pos = x;
-            if (pos % 2 == 1)
-                return invCount % 2 == 0;
-            else
-                return invCount % 2 == 1;
+            if (pos % 2 == 1) return invCount % 2 == 0;
+            else return invCount % 2 == 1;
         }
-    }
 
+    }
     private int[] convertTo1DArray() {
         int[] arr = new int[N * N];
         int k = 0;
@@ -299,5 +294,19 @@ public class MainActivity extends AppCompatActivity {
             arr[k++] = Integer.parseInt(values.get(i));
         }
         return arr;
+    }
+    public class Point {
+        private int x;
+        private int y;
+        public Point(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+        public int getX() {
+            return x;
+        }
+        public int getY() {
+            return y;
+        }
     }
 }

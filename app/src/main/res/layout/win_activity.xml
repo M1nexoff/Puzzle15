@@ -9,65 +9,71 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="15"
+        android:layout_weight="2"
         android:src="@drawable/win"
         android:layout_gravity="center"
         android:scaleType="centerInside" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="9"
-        android:text="Congratulations!\nYou Win!"
-        android:textSize="33sp"
-        android:textColor="#000000"
-        android:gravity="center"
-        android:padding="16dp" />
 
     <LinearLayout
         android:id="@+id/infoLayout"
         android:layout_weight="5"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:orientation="vertical"
         android:gravity="center_horizontal">
 
         <TextView
+            android:layout_weight="1"
+            android:layout_marginHorizontal="51dp"
+            android:layout_marginTop="10dp"
             android:id="@+id/moves"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Moves:"
             android:textSize="30dp"
+            android:background="@drawable/free_button"
             android:gravity="center"
-            android:textColor="@color/black" />
+            android:textColor="@color/white" />
 
         <Chronometer
+            android:layout_weight="1"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="51dp"
             android:id="@+id/timer"
+            android:background="@drawable/free_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:format="Time - %s"
             android:text="Time:"
             android:textSize="30dp"
             android:gravity="center"
-            android:textColor="#000000" />
+            android:textColor="#FFF" />
 
         <TextView
+            android:layout_weight="1"
+            android:background="@drawable/free_button"
             android:id="@+id/top1"
+            android:layout_marginHorizontal="51dp"
+            android:layout_marginVertical="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Best moves:"
             android:textSize="30dp"
             android:gravity="center"
-            android:textColor="#000000" />
+            android:textColor="#FFF" />
         <Chronometer
+            android:layout_weight="1"
+            android:background="@drawable/free_button"
             android:id="@+id/top2"
+            android:layout_marginHorizontal="51dp"
+            android:layout_marginBottom="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:format="Best time - %s"
             android:textSize="30dp"
             android:gravity="center"
-            android:textColor="#000000" />
+            android:textColor="#FFF" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

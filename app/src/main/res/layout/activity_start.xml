@@ -16,49 +16,59 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.2"/>
-        <TextView
+        <ImageView
+            android:layout_gravity="center"
             android:id="@+id/app_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Puzzle 15\nGame"
-            android:textColor="@color/white"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@drawable/puzzle"
             android:gravity="center"
-            android:textSize="60dp"
-            android:textStyle="bold"
             android:layout_marginTop="20dp" />
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/play"
-            android:layout_marginHorizontal="50dp"
+            android:layout_marginHorizontal="60dp"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_marginVertical="5dp"
-            android:background="@drawable/play_start"/>
+            android:text="Play"
+            android:textColor="@color/white"
+            android:textSize="46dp"
+            android:background="@drawable/free_button"
+            android:layout_marginVertical="5dp"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="wrap_content"
             android:id="@+id/info"
             android:layout_marginVertical="5dp"
             android:layout_height="0dp"
-            android:layout_marginHorizontal="50dp"
+            android:layout_marginHorizontal="60dp"
             android:layout_weight="1"
-            android:background="@drawable/info" />
+            android:text="Tops"
+            android:textColor="@color/white"
+            android:textSize="46dp"
+            android:background="@drawable/free_button" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:layout_marginVertical="5dp"
-            android:layout_marginHorizontal="50dp"
+            android:layout_marginHorizontal="60dp"
             android:layout_weight="1"
             android:id="@+id/links"
             android:layout_width="wrap_content"
-            android:background="@drawable/links"
+            android:text="Links"
+            android:textColor="@color/white"
+            android:textSize="46dp"
+            android:background="@drawable/free_button"
             android:layout_height="0dp"/>
         <androidx.appcompat.widget.AppCompatButton
             android:layout_marginVertical="5dp"
-            android:layout_marginHorizontal="50dp"
+            android:layout_marginHorizontal="60dp"
             android:layout_weight="1"
             android:id="@+id/exit"
             android:layout_width="wrap_content"
-            android:background="@drawable/exit"
+            android:text="Exit"
+            android:textColor="@color/white"
+            android:textSize="46dp"
+            android:background="@drawable/free_button"
             android:layout_height="0dp"/>
         <View
             android:layout_width="match_parent"
