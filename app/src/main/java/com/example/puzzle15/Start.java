@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.SystemClock;
 
 public class Start extends AppCompatActivity {
     private SharedPreferences pref;
@@ -30,7 +31,14 @@ public class Start extends AppCompatActivity {
         });
 
         findViewById(R.id.exit).setOnClickListener(v -> {
-            finish();
+            ResetDialog dialog = new ResetDialog(1);
+            dialog.setCancelAction(dialog::dismiss);
+            dialog.setRestartAction(() -> {
+                finish();
+                dialog.dismiss();
+            });
+            dialog.show(getSupportFragmentManager(), "reset_dialog");
+
         });
     }
 }

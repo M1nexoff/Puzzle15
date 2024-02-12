@@ -1,99 +1,134 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fon"
-    android:orientation="horizontal"
+    android:background="#2602FFC3"
+    android:gravity="center"
     tools:context=".Links">
+
     <LinearLayout
-        android:layout_weight="1.2"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
         android:gravity="center"
-        android:orientation="vertical">
-        <LinearLayout
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginVertical="40dp"
-            android:layout_marginHorizontal="55dp"
-            android:background="@drawable/free_button">
-            <TextView
-                android:id="@+id/moves"
-                android:layout_gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Best moves:"
-                android:textSize="30dp"
-                android:gravity="center"
-                android:textColor="@color/white" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="40dp"
-            android:layout_gravity="center"
-            android:layout_marginHorizontal="55dp"
-            android:background="@drawable/free_button">
-            <Chronometer
-                android:id="@+id/timer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:format="Best time - %s"
-                android:textSize="30dp"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:textColor="@color/white" />
-        </LinearLayout>
+        android:orientation="horizontal">
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:orientation="vertical">
+        <!-- Left Column -->
         <LinearLayout
-            android:id="@+id/menu"
-            android:layout_gravity="center"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="30dp"
             android:layout_weight="1"
-            android:background="@drawable/free_button"
+            android:orientation="vertical"
             android:gravity="center">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Menu"
-                    android:textColor="@color/white"
-                    android:textSize="28sp" />
-            </LinearLayout>
-            <ImageView
-                android:id="@+id/refresh"
-                android:layout_gravity="center"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@drawable/refresh"/>
+
+            <!-- Best Moves -->
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="16dp">
+
+                <TextView
+                    android:fontFamily="@font/nunito"
+                    android:id="@+id/moves"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:padding="16dp"
+                    android:background="@drawable/rounded_button"
+                    android:text="Best Moves:"
+                    android:textSize="24sp"
+                    android:gravity="center"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <!-- Best Time -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="16dp">
+
+                <Chronometer
+                    android:fontFamily="@font/nunito"
+                    android:id="@+id/timer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:background="@drawable/rounded_button"
+                    android:text="Best Time - 00:00"
+                    android:textSize="24sp"
+                    android:gravity="center"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <!-- Restart Button -->
+            <ImageView
+                android:layout_marginTop="16dp"
+                android:id="@+id/refresh"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="8dp"
+                android:src="@drawable/ic_restart"
+                android:background="@drawable/rounded_button"
+                android:layout_gravity="center"
+                app:tint="@color/white" />
+        </LinearLayout>
+
+        <!-- Right Column -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <!-- Game Button -->
+            <LinearLayout
+                android:gravity="center"
                 android:id="@+id/game"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="30dp"
-                android:layout_weight="1"
-                android:background="@drawable/free_button"
-                android:gravity="center">
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/menu"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
                 <TextView
+                    android:fontFamily="@font/nunito"
+                    android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_button"
+                    android:gravity="center"
+                    android:padding="16dp"
                     android:text="Game"
                     android:textColor="@color/white"
-                    android:textSize="28sp" />
+                    android:textSize="24sp" />
             </LinearLayout>
-        </LinearLayout>
-</LinearLayout>
 
+            <!-- Menu Button -->
+            <LinearLayout
+                android:gravity="center"
+                android:id="@+id/menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/game"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:fontFamily="@font/nunito"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_button"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:text="Menu"
+                    android:textColor="@color/white"
+                    android:textSize="24sp" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</FrameLayout>

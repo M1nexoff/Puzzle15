@@ -1,161 +1,138 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fon"
-    android:gravity="center"
     android:orientation="horizontal"
-    tools:context=".Links">
+    android:background="#2602FFC3"
+    android:gravity="center">
 
+    <!-- Links Section (Left) -->
     <LinearLayout
-        android:layout_weight="1.2"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_gravity="center|top"
-        android:orientation="vertical">
-
-            <LinearLayout
-                    android:id="@+id/telegram"
-                    android:layout_weight="1"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginVertical="5dp"
-                    android:layout_gravity="center"
-                    android:layout_marginHorizontal="60dp"
-                    android:background="@drawable/free_button">
-
-                    <ImageView
-                        android:layout_weight="1"
-                        android:layout_width="80dp"
-                        android:layout_gravity="center"
-                        android:layout_height="80dp"
-                        android:padding="12dp"
-                        android:src="@drawable/telegram" />
-
-
-                    <TextView
-                        android:layout_weight="1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="Telegram "
-                        android:textColor="@color/white"
-                        android:textSize="28sp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/gita"
-                    android:layout_weight="1"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginVertical="5dp"
-                    android:layout_gravity="center"
-                    android:layout_marginHorizontal="60dp"
-                    android:background="@drawable/free_button">
-
-                    <ImageView
-                        android:layout_width="21dp"
-                        android:layout_height="90dp"
-                        android:layout_gravity="center"
-                        android:layout_marginRight="10dp"
-                        android:layout_weight="1"
-                        android:padding="12dp"
-                        android:src="@drawable/gita" />
-
-
-                    <TextView
-                        android:layout_weight="1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="Gita "
-                        android:textColor="@color/white"
-                        android:textSize="28sp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/github"
-                    android:layout_weight="1"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginVertical="5dp"
-                    android:layout_gravity="center"
-                    android:layout_marginHorizontal="60dp"
-                    android:background="@drawable/free_button">
-
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="85dp"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:padding="12dp"
-                        android:src="@drawable/github" />
-
-
-                    <TextView
-                        android:layout_weight="1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="GitHub"
-                        android:textColor="@color/white"
-                        android:textSize="28sp" />
-
-                </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
         android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="10dp"
-        android:layout_gravity="bottom|center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center_vertical">
 
         <LinearLayout
-            android:id="@+id/menu"
-            android:layout_gravity="center"
+            android:id="@+id/telegram"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="50dp"
-            android:layout_weight="1"
-            android:background="@drawable/free_button"
-            android:gravity="center">
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp"
+            android:layout_marginStart="56dp"
+            android:background="@drawable/rounded_dialog"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_telegram"
+                android:padding="12dp"/>
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Telegram"
+                android:textSize="28sp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/gita"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp"
+            android:layout_marginStart="56dp"
+            android:background="@drawable/rounded_dialog"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_gita"
+                android:padding="12dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gita"
+                android:textSize="28sp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/github"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp"
+            android:layout_marginStart="56dp"
+            android:background="@drawable/rounded_dialog"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_github"
+                android:padding="12dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GitHub"
+                android:textSize="28sp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Buttons Section (Right) -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_weight="0.5"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <LinearLayout
+            app:layout_constraintTop_toBottomOf="@id/game"
+            android:id="@+id/menu"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:padding="24dp"
+                android:background="@drawable/rounded_dialog"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Menu"
                 android:textColor="@color/white"
                 android:textSize="28sp" />
-
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/game"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@drawable/free_button"
-            android:gravity="center">
-
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/menu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/rounded_dialog"
+                android:padding="24dp"
                 android:text="Game"
                 android:textColor="@color/white"
                 android:textSize="28sp" />
-
         </LinearLayout>
-
-
-    </LinearLayout>
-
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

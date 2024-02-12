@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fon"
+    android:background="#2602FFC3"
     android:gravity="center"
     tools:context=".Links">
 
@@ -13,105 +12,116 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical">
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:layout_marginVertical="5dp"
             android:layout_gravity="center"
-            android:layout_marginHorizontal="60dp"
-            android:background="@drawable/free_button">
+            android:layout_marginHorizontal="60dp">
 
             <TextView
+                android:fontFamily="@font/nunito"
+                android:layout_marginBottom="16dp"
+                android:padding="16dp"
+                android:background="@drawable/rounded_button"
                 android:id="@+id/moves"
-                android:layout_gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Best moves:"
-                android:textSize="30dp"
+                android:text="Best Moves:"
+                android:textSize="24sp"
                 android:gravity="center"
                 android:textColor="@color/white" />
         </LinearLayout>
 
+        <!-- Best Time Chronometer -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:layout_marginVertical="5dp"
             android:layout_gravity="center"
-            android:layout_marginHorizontal="60dp"
-            android:background="@drawable/free_button">
+            android:layout_marginHorizontal="60dp">
 
             <Chronometer
+                android:fontFamily="@font/nunito"
+                android:background="@drawable/rounded_button"
+                android:padding="16dp"
                 android:id="@+id/timer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:format="Best time - %s"
-                android:textSize="28dp"
+                android:format="Best Time - %s"
+                android:textSize="24sp"
                 android:gravity="center"
-                android:layout_gravity="center"
                 android:textColor="@color/white" />
         </LinearLayout>
+
+        <!-- Spacing -->
         <Space
-            android:layout_width="100dp"
-            android:layout_height="50dp"/>
+            android:layout_width="match_parent"
+            android:layout_height="80dp"/>
+
+        <!-- Refresh Button -->
         <ImageView
             android:id="@+id/refresh"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_restart"
+            android:background="@drawable/rounded_button"
             android:layout_gravity="center"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="@drawable/refresh">
+            app:tint="@color/white" />
 
-        </ImageView>
+        <!-- Spacing -->
+
+
     </LinearLayout>
 
+    <!-- Bottom Buttons -->
     <LinearLayout
+        android:layout_marginBottom="36dp"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom">
 
+        <!-- Menu Button -->
         <LinearLayout
             android:id="@+id/menu"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginHorizontal="20dp"
             android:layout_weight="1"
-            android:background="@drawable/free_button"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/rounded_button"
             android:gravity="center">
 
             <TextView
+                android:fontFamily="@font/nunito"
+                android:padding="16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:text="Menu"
                 android:textColor="@color/white"
-                android:textSize="28sp" />
+                android:textSize="20sp" />
 
         </LinearLayout>
 
+        <!-- Game Button -->
         <LinearLayout
             android:id="@+id/game"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginHorizontal="20dp"
             android:layout_weight="1"
-            android:background="@drawable/free_button"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/rounded_button"
             android:gravity="center">
 
-
             <TextView
+                android:fontFamily="@font/nunito"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:text="Game"
                 android:textColor="@color/white"
-                android:textSize="28sp" />
+                android:textSize="20sp" />
 
         </LinearLayout>
-
-
     </LinearLayout>
 
 </FrameLayout>

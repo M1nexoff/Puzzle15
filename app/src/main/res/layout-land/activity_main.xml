@@ -1,255 +1,262 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#2602FFC3"
+    tools:context=".Start">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="145dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/frameLayout2"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
+            android:layout_gravity="top"
+            android:layout_margin="15dp"
+            android:background="@drawable/rounded_count"
+            android:backgroundTint="#65A7B8"
+            app:layout_constraintBottom_toTopOf="@id/frameLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/countt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Count: 2"
+                android:textColor="@android:color/white"
+                android:textSize="24sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"
+            android:layout_margin="15dp"
+            android:background="@drawable/rounded_count"
+            android:backgroundTint="#65A7B8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout2">
+
+            <Chronometer
+                android:id="@+id/chronometer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="25sp" />
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
     <LinearLayout
         android:id="@+id/fone"
         android:layout_width="match_parent"
-        android:background="@drawable/fon"
         android:layout_height="match_parent"
         android:orientation="horizontal">
-        <LinearLayout
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_gravity="center"
-                android:layout_marginVertical="60sp"
-                android:layout_marginHorizontal="15dp"
-                android:layout_weight="1"
-                android:background="@drawable/count">
 
-                <TextView
-                    android:id="@+id/countt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="20dp"
-                    android:layout_weight="1"
-                    android:text="Count: "
-                    android:textColor="@color/white"
-                    android:textSize="25dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginVertical="60dp"
-                android:layout_weight="1"
-                android:background="@drawable/count"
-                android:gravity="center">
-
-                <Chronometer
-                    android:id="@+id/chronometer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/white"
-                    android:gravity="center"
-                    android:textColor="@color/white"
-                    android:textSize="25dp" />
-            </LinearLayout>
-        </LinearLayout>
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
-            <FrameLayout
-                android:layout_marginStart="10dp"
-                android:layout_width="330dp"
-                android:layout_height="330dp"
-                android:layout_gravity="center|left">
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/circle_view_replaced" />
-                <ImageView
-                    android:layout_width="310dp"
-                    android:layout_height="310dp"
-                    android:clipToOutline="true"
-                    android:layout_gravity="center"
-                    android:src="@drawable/cub" />
-                <RelativeLayout
-                    android:id="@+id/relative"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center">
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn1"
-                        android:background="@drawable/button"
-                        style="@style/Puzzle15"
-                        android:layout_margin="10dp" />
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn2"
-                        style="@style/Puzzle15"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="@drawable/button"
-                        android:layout_marginBottom="10dp"
-                        android:layout_toEndOf="@id/btn1"
-                        android:clipToOutline="true" />
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn3"
-                        android:layout_margin="10dp"
-                        android:layout_toEndOf="@id/btn2"
-                        style="@style/Puzzle15"
-                        android:background="@drawable/button" />
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn4"
-                        android:layout_margin="10dp"
-                        android:layout_toEndOf="@id/btn3"
-                        style="@style/Puzzle15"
-                        android:background="@drawable/button" />
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn5"
-                        style="@style/Puzzle15"
-                        android:background="@drawable/button"
-                        android:layout_below="@id/btn1"
-                        android:layout_margin="10dp" />
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn6"
-                        style="@style/Puzzle15"
-                        android:background="@drawable/button"
-                        android:layout_below="@id/btn1"
-                        android:layout_margin="10dp"
-                        android:layout_toEndOf="@id/btn5" />
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn7"
-                        style="@style/Puzzle15"
-                        android:background="@drawable/button"
-                        android:layout_below="@id/btn1"
-                        android:layout_margin="10dp"
-                        android:layout_toEndOf="@id/btn6" />
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn8"
-                        style="@style/Puzzle15"
-                        android:background="@drawable/button"
-                        android:layout_below="@id/btn1"
-                        android:layout_margin="10dp"
-                        android:layout_toEndOf="@id/btn7" />
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn9"
-                        style="@style/Puzzle15"
-                        android:background="@drawable/button"
-                        android:layout_below="@id/btn5"
-                        android:layout_margin="10dp" />
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn10"
-                        style="@style/Puzzle15"
-                        android:background="@drawable/button"
-                        android:layout_below="@id/btn5"
-                        android:layout_margin="10dp"
-                        android:layout_toEndOf="@id/btn9" />
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn11"
-                        style="@style/Puzzle15"
-                        android:background="@drawable/button"
-                        android:layout_below="@id/btn5"
-                        android:layout_margin="10dp"
-                        android:layout_toEndOf="@id/btn10" />
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn12"
-                        style="@style/Puzzle15"
-                        android:background="@drawable/button"
-                        android:layout_below="@id/btn5"
-                        android:layout_margin="10dp"
-                        android:layout_toEndOf="@id/btn11" />
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn13"
-                        style="@style/Puzzle15"
-                        android:background="@drawable/button"
-                        android:layout_below="@id/btn9"
-                        android:layout_margin="10dp" />
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn14"
-                        style="@style/Puzzle15"
-                        android:background="@drawable/button"
-                        android:layout_below="@id/btn9"
-                        android:layout_margin="10dp"
-                        android:layout_toEndOf="@id/btn13" />
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn15"
-                        style="@style/Puzzle15"
-                        android:background="@drawable/button"
-                        android:layout_below="@id/btn9"
-                        android:layout_margin="10dp"
-                        android:layout_toEndOf="@id/btn14" />
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn16"
-                        style="@style/Puzzle15"
-                        android:background="@drawable/button"
-                        android:layout_below="@id/btn9"
-                        android:layout_margin="10dp"
-                        android:layout_toEndOf="@id/btn15" />
-                </RelativeLayout>
-
-                <View
-                    android:id="@+id/pause_fon"
-                    android:visibility="invisible"
-                    android:layout_gravity="center"
-                    android:layout_width="310dp"
-                    android:layout_height="310dp"
-                    android:background="@drawable/paused" />
-            </FrameLayout>
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_gravity="center|right"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center">
-                <ImageView
-                    android:id="@+id/back"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:clickable="true"
-                    android:layout_gravity="center"
-                    android:src="@drawable/back" />
-                <Space
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"/>
-                <FrameLayout
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center">
-                    <ImageView
-
-                        android:id="@+id/pause"
-                        android:layout_width="100dp"
-                        android:layout_gravity="center"
-                        android:layout_height="100dp"
-                        android:clickable="true"
-                        android:src="@drawable/pause" />
-                    <ImageView
-                        android:visibility="invisible"
-                        android:id="@+id/resume"
-                        android:layout_width="100dp"
-                        android:layout_gravity="center"
-                        android:layout_height="100dp"
-                        android:clickable="true"
-                        android:src="@drawable/play" />
-                </FrameLayout>
-                <Space
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"/>
-                <ImageView
-                    android:id="@+id/refresh"
-                    android:layout_width="100dp"
-                    android:layout_gravity="center"
-                    android:layout_height="100dp"
-                    android:clickable="true"
-                    android:src="@drawable/refresh" />
-            </LinearLayout>
-
-        </FrameLayout>
     </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginEnd="25dp"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:orientation="horizontal">
+
+        <ImageView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/back"
+            android:id="@+id/refresh"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="end"
+            android:layout_margin="15dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="#65A7B8"
+            android:clickable="true"
+            android:padding="15dp"
+            android:src="@drawable/ic_restart"
+            app:tint="@color/white" />
+
+        <ImageView
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/back"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_margin="15dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="#65A7B8"
+            android:clickable="true"
+            android:padding="15dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/refresh"
+            app:tint="@color/white" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <FrameLayout
+            android:padding="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/container_view"
+            android:backgroundTint="#BBE6E4"
+            android:layout_gravity="center">
+
+            <RelativeLayout
+                android:id="@+id/relative"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/container_view"
+                android:backgroundTint="#42BFDD"
+                android:gravity="center"
+                android:padding="6dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn1"
+                    style="@style/Puzzle15"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rounded_button" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn2"
+                    style="@style/Puzzle15"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@id/btn1"
+                    android:background="@drawable/rounded_button"
+                    android:clipToOutline="true" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn3"
+                    style="@style/Puzzle15"
+                    android:layout_margin="10dp"
+                    android:layout_toEndOf="@id/btn2"
+                    android:background="@drawable/rounded_button" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn4"
+                    style="@style/Puzzle15"
+                    android:layout_margin="10dp"
+                    android:layout_toEndOf="@id/btn3"
+                    android:background="@drawable/rounded_button" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn5"
+                    style="@style/Puzzle15"
+                    android:layout_below="@id/btn1"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rounded_button" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn6"
+                    style="@style/Puzzle15"
+                    android:layout_below="@id/btn1"
+                    android:layout_margin="10dp"
+                    android:layout_toEndOf="@id/btn5"
+                    android:background="@drawable/rounded_button" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn7"
+                    style="@style/Puzzle15"
+                    android:layout_below="@id/btn1"
+                    android:layout_margin="10dp"
+                    android:layout_toEndOf="@id/btn6"
+                    android:background="@drawable/rounded_button" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn8"
+                    style="@style/Puzzle15"
+                    android:layout_below="@id/btn1"
+                    android:layout_margin="10dp"
+                    android:layout_toEndOf="@id/btn7"
+                    android:background="@drawable/rounded_button" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn9"
+                    style="@style/Puzzle15"
+                    android:layout_below="@id/btn5"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rounded_button" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn10"
+                    style="@style/Puzzle15"
+                    android:layout_below="@id/btn5"
+                    android:layout_margin="10dp"
+                    android:layout_toEndOf="@id/btn9"
+                    android:background="@drawable/rounded_button" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn11"
+                    style="@style/Puzzle15"
+                    android:layout_below="@id/btn5"
+                    android:layout_margin="10dp"
+                    android:layout_toEndOf="@id/btn10"
+                    android:background="@drawable/rounded_button" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn12"
+                    style="@style/Puzzle15"
+                    android:layout_below="@id/btn5"
+                    android:layout_margin="10dp"
+                    android:layout_toEndOf="@id/btn11"
+                    android:background="@drawable/rounded_button" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn13"
+                    style="@style/Puzzle15"
+                    android:layout_below="@id/btn9"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rounded_button" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn14"
+                    style="@style/Puzzle15"
+                    android:layout_below="@id/btn9"
+                    android:layout_margin="10dp"
+                    android:layout_toEndOf="@id/btn13"
+                    android:background="@drawable/rounded_button" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn15"
+                    style="@style/Puzzle15"
+                    android:layout_below="@id/btn9"
+                    android:layout_margin="10dp"
+                    android:layout_toEndOf="@id/btn14"
+                    android:background="@drawable/rounded_button" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn16"
+                    style="@style/Puzzle15"
+                    android:layout_below="@id/btn9"
+                    android:layout_margin="10dp"
+                    android:layout_toEndOf="@id/btn15"
+                    android:background="@drawable/rounded_button" />
+            </RelativeLayout>
+        </FrameLayout>
+    <View
+        android:id="@+id/pause_fon"
+        android:layout_width="340dp"
+        android:layout_height="340dp"
+        android:background="@drawable/rounded_pause"
+        android:layout_gravity="center"
+        android:visibility="invisible" />
 </FrameLayout>

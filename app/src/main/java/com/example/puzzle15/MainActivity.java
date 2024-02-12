@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences pref;
     private Chronometer chronometer;
     private long time;
-    private boolean isPaused;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,13 +70,7 @@ public class MainActivity extends AppCompatActivity {
         chronometer = findViewById(R.id.chronometer);
         chronometer.setFormat("%s");
         chronometer.setBase(SystemClock.elapsedRealtime() + time);
-        if (!pref.getBoolean("PAUSE", false)) {
-            resume();
-        } else {
-            pause();
-        }
-        findViewById(R.id.pause).setOnClickListener(a -> pause());
-        findViewById(R.id.resume).setOnClickListener(a -> resume());
+        chronometer.start();
     }
 
     private void refresh() {
@@ -102,35 +95,11 @@ public class MainActivity extends AppCompatActivity {
         pref.edit().putLong("TIME", 0).apply();
         time = 0;
         chronometer.start();
-        resume();
     }
 
     private void shuffle() {
 //        Collections.shuffle(values);
         values.add("0");
-    }
-
-    private void pause() {
-        chronometer.stop();
-        pref.edit().putLong("TIME", chronometer.getBase() - SystemClock.elapsedRealtime()).apply();
-        isPaused = true;
-        pref.edit().putBoolean("PAUSE", true).apply();
-        findViewById(R.id.pause_fon).setVisibility(View.VISIBLE);
-        findViewById(R.id.pause).setVisibility(View.GONE);
-        findViewById(R.id.resume).setVisibility(View.VISIBLE);
-        findViewById(R.id.pause).setOnClickListener(v -> resume());
-    }
-
-    private void resume() {
-        pref.edit().putBoolean("PAUSE", false).apply();
-        isPaused = false;
-        time = pref.getLong("TIME", 0);
-        chronometer.setBase(SystemClock.elapsedRealtime() + time);
-        chronometer.start();
-        findViewById(R.id.pause_fon).setVisibility(View.INVISIBLE);
-        findViewById(R.id.pause).setVisibility(View.VISIBLE);
-        findViewById(R.id.resume).setVisibility(View.GONE);
-        findViewById(R.id.pause).setOnClickListener(v -> pause());
     }
 
     private void initViews() {
@@ -156,25 +125,23 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        pref.edit().putBoolean("PAUSE", isPaused).apply();
+        pref.edit().putBoolean("PAUSE", true).apply();
     }
 
     @Override
     protected void onPause() {
+        super.onPause();
         chronometer.stop();
         time = chronometer.getBase() - SystemClock.elapsedRealtime();
         pref.edit().putLong("TIME", time).apply();
-        super.onPause();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        if (!pref.getBoolean("PAUSE", false)) {
-            time = pref.getLong("TIME", 0);
-            chronometer.setBase(SystemClock.elapsedRealtime() + time);
-            chronometer.start();
-        }
+        time = pref.getLong("TIME", 0);
+        chronometer.setBase(SystemClock.elapsedRealtime() + time);
+        chronometer.start();
     }
 
     @Override
@@ -192,9 +159,6 @@ public class MainActivity extends AppCompatActivity {
         pref.edit().putString("STATE", sb.toString()).apply();
         pref.edit().putInt("COUNT", count).apply();
         pref.edit().putLong("TIME", chronometer.getBase() - SystemClock.elapsedRealtime()).apply();
-    /*    time = chronometer.getBase() - SystemClock.elapsedRealtime();
-        chronometer.stop();
-    */
         if (isWin) {
             pref.edit().putLong("TIME", 0).apply();
         }
@@ -283,6 +247,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
     private int[] convertTo1DArray() {
         int[] arr = new int[N * N];
         int k = 0;
@@ -295,16 +260,20 @@ public class MainActivity extends AppCompatActivity {
         }
         return arr;
     }
+
     public class Point {
         private int x;
         private int y;
+
         public Point(int x, int y) {
             this.x = x;
             this.y = y;
         }
+
         public int getX() {
             return x;
         }
+
         public int getY() {
             return y;
         }
