@@ -33,8 +33,7 @@
                 android:layout_weight="1"
                 android:id="@+id/telegram"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="8dp"
+                android:layout_height="56dp"
                 android:layout_marginHorizontal="16dp"                android:background="@drawable/rounded_dialog"
                 android:backgroundTint="@color/white"
                 android:gravity="center_vertical">
@@ -51,43 +50,41 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nunito"
                     android:text="Telegram"
-
-                    android:textSize="28sp" />
+                    android:padding="8dp"
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_weight="1"
                 android:id="@+id/gita"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="8dp"
+                android:layout_height="56dp"
                 android:layout_marginHorizontal="16dp"
+                android:layout_weight="1"
                 android:background="@drawable/rounded_dialog"
                 android:backgroundTint="@color/white"
                 android:gravity="center_vertical">
 
                 <ImageView
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginStart="8dp"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="16dp"
                     android:src="@drawable/ic_gita" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nunito"
+                    android:padding="8dp"
                     android:text="Gita"
-
-                    android:textSize="28sp" />
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_weight="1"
                 android:id="@+id/github"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="8dp"
+                android:layout_height="56dp"
                 android:layout_marginHorizontal="16dp"                android:background="@drawable/rounded_dialog"
                 android:backgroundTint="@color/white"
                 android:gravity="center_vertical">
@@ -104,8 +101,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nunito"
                     android:text="GitHub"
-
-                    android:textSize="28sp" />
+                    android:padding="8dp"
+                    android:textSize="18sp" />
             </LinearLayout>
         </LinearLayout>
 
