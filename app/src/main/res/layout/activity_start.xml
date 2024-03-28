@@ -12,7 +12,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center">
-
         <Space
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -23,16 +22,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Puzzle 15"
-            android:layout_marginBottom="35dp"
+            android:layout_marginBottom="50dp"
             android:textSize="56sp"
             android:textColor="#007ACC"
-            android:fontFamily="@font/nunito"
-            android:layout_marginTop="20dp" />
+            android:fontFamily="@font/nunito" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/play"
             android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_height="65dp"
             android:text="Play"
             android:textColor="@android:color/white"
             android:textSize="22sp"
@@ -43,18 +41,16 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/info"
             android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_height="65dp"
             android:text="Tops"
             android:textColor="@android:color/white"
             android:textSize="22sp"
-            android:layout_margin="16dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="#4CAF50"/>
-
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/links"
             android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_height="65dp"
             android:text="Links"
             android:textColor="@android:color/white"
             android:textSize="22sp"
@@ -65,11 +61,10 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/exit"
             android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_height="65dp"
             android:text="Exit"
             android:textColor="@android:color/white"
             android:textSize="22sp"
-            android:layout_margin="16dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="#F44336"/>
 

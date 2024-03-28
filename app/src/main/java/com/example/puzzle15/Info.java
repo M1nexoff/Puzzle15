@@ -9,7 +9,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Chronometer;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -17,16 +19,34 @@ import android.widget.TextView;
 
 public class Info extends AppCompatActivity {
     SharedPreferences pref;
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        final int action = event.getActionMasked();
 
+        switch (action) {
+            case MotionEvent.ACTION_POINTER_DOWN:
+                // Check if it's a three-finger touch
+                if (event.getPointerCount() == 3) {
+                    // Consume the event to prevent further processing
+                    return true;
+                }
+                break;
+        }
+
+        // Let the system handle the event for other cases
+        return super.onTouchEvent(event);
+    }
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         pref = getSharedPreferences("STATE", MODE_PRIVATE);
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_info);
 
         TextView moves = findViewById(R.id.moves);
-        moves.setText("Moves: " + pref.getInt("TOP1",0));
+        moves.setText("Best Moves: " + pref.getInt("TOP1",0));
 
         Chronometer time = findViewById(R.id.timer);
         long baseTime = SystemClock.elapsedRealtime() + pref.getLong("TOP2", 0);

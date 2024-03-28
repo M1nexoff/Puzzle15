@@ -20,10 +20,10 @@
 
             <FrameLayout
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="56dp"
                 android:layout_weight="1"
                 android:layout_gravity="bottom|right"
-                android:layout_margin="15dp"
+                android:layout_marginHorizontal="16dp"
                 android:backgroundTint="#65A7B8"
                 android:background="@drawable/rounded_count">
 
@@ -34,16 +34,16 @@
                     android:layout_gravity="center"
                     android:text="Count: 2"
                     android:textColor="@android:color/white"
-                    android:textSize="24sp" />
+                    android:textSize="18sp" />
             </FrameLayout>
 
             <FrameLayout
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="56dp"
                 android:layout_weight="1"
                 android:backgroundTint="#65A7B8"
                 android:layout_gravity="bottom|left"
-                android:layout_margin="15dp"
+                android:layout_marginHorizontal="16dp"
                 android:background="@drawable/rounded_count">
 
                 <Chronometer
@@ -52,7 +52,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:textSize="25sp"
+                    android:textSize="18sp"
                     android:textColor="@android:color/white" />
             </FrameLayout>
         </LinearLayout>
@@ -200,12 +200,12 @@
             <ImageView
                 android:id="@+id/back"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="56dp"
                 android:layout_gravity="start"
                 android:background="@drawable/rounded_button"
                 android:backgroundTint="#65A7B8"
                 android:clickable="true"
-                android:padding="15dp"
+                android:padding="12dp"
                 android:src="@drawable/ic_back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/refresh"
@@ -216,12 +216,12 @@
             <ImageView
                 android:id="@+id/refresh"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="56dp"
                 android:layout_gravity="end"
                 android:background="@drawable/rounded_button"
                 android:backgroundTint="#65A7B8"
                 android:clickable="true"
-                android:padding="15dp"
+                android:padding="12dp"
                 android:src="@drawable/ic_restart"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

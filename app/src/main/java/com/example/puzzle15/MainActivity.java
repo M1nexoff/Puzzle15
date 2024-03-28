@@ -7,7 +7,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.ImageView;
@@ -31,11 +33,29 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences pref;
     private Chronometer chronometer;
     private long time;
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        final int action = event.getActionMasked();
 
+        switch (action) {
+            case MotionEvent.ACTION_POINTER_DOWN:
+                // Check if it's a three-finger touch
+                if (event.getPointerCount() == 3) {
+                    // Consume the event to prevent further processing
+                    return true;
+                }
+                break;
+        }
+
+        // Let the system handle the event for other cases
+        return super.onTouchEvent(event);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         ImageView ref = findViewById(R.id.refresh);
         ref.setOnClickListener(v -> refresh());
         ImageView back = findViewById(R.id.back);

@@ -6,18 +6,29 @@
     android:background="#2602FFC3"
     android:gravity="center"
     tools:context=".Links">
-
+    <ImageView
+        android:id="@+id/refresh"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:padding="16dp"
+        android:src="@drawable/ic_delete"
+        android:background="@drawable/rounded_button"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:tint="@color/white" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="5dp"
+            android:layout_marginVertical="8dp"
             android:layout_gravity="center"
-            android:layout_marginHorizontal="60dp">
+            android:layout_marginHorizontal="24dp">
 
             <TextView
                 android:fontFamily="@font/nunito"
@@ -26,9 +37,9 @@
                 android:background="@drawable/rounded_button"
                 android:id="@+id/moves"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="56dp"
                 android:text="Best Moves:"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:gravity="center"
                 android:textColor="@color/white" />
         </LinearLayout>
@@ -36,10 +47,10 @@
         <!-- Best Time Chronometer -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="5dp"
+            android:layout_height="56dp"
+            android:layout_marginVertical="8dp"
             android:layout_gravity="center"
-            android:layout_marginHorizontal="60dp">
+            android:layout_marginHorizontal="24dp">
 
             <Chronometer
                 android:fontFamily="@font/nunito"
@@ -49,7 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:format="Best Time - %s"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:gravity="center"
                 android:textColor="@color/white" />
         </LinearLayout>
@@ -60,15 +71,7 @@
             android:layout_height="80dp"/>
 
         <!-- Refresh Button -->
-        <ImageView
-            android:id="@+id/refresh"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:padding="8dp"
-            android:src="@drawable/ic_restart"
-            android:background="@drawable/rounded_button"
-            android:layout_gravity="center"
-            app:tint="@color/white" />
+
 
         <!-- Spacing -->
 

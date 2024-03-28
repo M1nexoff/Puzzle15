@@ -15,9 +15,9 @@
         <FrameLayout
             android:id="@+id/frameLayout2"
             android:layout_width="130dp"
-            android:layout_height="60dp"
+            android:layout_height="56dp"
             android:layout_gravity="top"
-            android:layout_margin="15dp"
+            android:layout_margin="16dp"
             android:background="@drawable/rounded_count"
             android:backgroundTint="#65A7B8"
             app:layout_constraintBottom_toTopOf="@id/frameLayout"
@@ -31,15 +31,15 @@
                 android:layout_gravity="center"
                 android:text="Count: 2"
                 android:textColor="@android:color/white"
-                android:textSize="24sp" />
+                android:textSize="18sp" />
         </FrameLayout>
 
         <FrameLayout
             android:id="@+id/frameLayout"
             android:layout_width="130dp"
-            android:layout_height="60dp"
+            android:layout_height="56dp"
             android:layout_gravity="bottom"
-            android:layout_margin="15dp"
+            android:layout_margin="16dp"
             android:background="@drawable/rounded_count"
             android:backgroundTint="#65A7B8"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -53,7 +53,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:textColor="@android:color/white"
-                android:textSize="25sp" />
+                android:textSize="18sp" />
         </FrameLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -80,13 +80,12 @@
             app:layout_constraintBottom_toTopOf="@id/back"
             android:id="@+id/refresh"
             android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_height="56dp"
             android:layout_gravity="end"
-            android:layout_margin="15dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="#65A7B8"
             android:clickable="true"
-            android:padding="15dp"
+            android:padding="8dp"
             android:src="@drawable/ic_restart"
             app:tint="@color/white" />
 
@@ -94,13 +93,12 @@
             app:layout_constraintStart_toStartOf="parent"
             android:id="@+id/back"
             android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_height="56dp"
             android:layout_gravity="center"
-            android:layout_margin="15dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="#65A7B8"
             android:clickable="true"
-            android:padding="15dp"
+            android:padding="8dp"
             android:src="@drawable/ic_back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

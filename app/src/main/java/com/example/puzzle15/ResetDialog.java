@@ -54,7 +54,6 @@ public class ResetDialog extends DialogFragment {
             dismiss();
         });
     }
-
     @Override
     public void onStart() {
         super.onStart();
@@ -63,7 +62,7 @@ public class ResetDialog extends DialogFragment {
             Window window = dialog.getWindow();
             if (window != null) {
                 window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                window.setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             }
         }
     }
